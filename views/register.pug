@@ -1,0 +1,17 @@
+extends layout
+block content
+    form(method='POST', action='/users/register')
+        .form-group
+            label Email:
+            input.form-control(name='email', type='email')
+        .form-group
+            label UserName:
+            input.form-control(name='username', type='text')
+        .form-group
+            label Password:
+            input.form-control(name='password', type='password')
+        .form-group
+            label ConfirmPassword:
+            input.form-control(name='ConPass', type='password')
+        br
+        input.btn.btn-primary(type='submit', value='submit')
