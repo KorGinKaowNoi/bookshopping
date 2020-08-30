@@ -8,7 +8,7 @@ const profile = require('../controller/profileController');
 router.get('/register',(req,res)=>{
     res.render('register');
 });
-router.post('/register',registerControll.register);
+router.post('/register',registerControll.checkValidate,registerControll.register);
 
 router.get('/login',(req,res)=>{
     res.render('login');
