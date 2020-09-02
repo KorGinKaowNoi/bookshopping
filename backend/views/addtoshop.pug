@@ -1,0 +1,25 @@
+extends layout
+block content
+    form(method='POST', action='/shopcart/add', enctype='multipart/form-data')
+        div(style='text-align:center')
+            h3 prepare to export to shopping mall
+            br
+            h3 please fill in your book details
+            img(src='http://localhost:5656/images/bookpicture/'+bookdata[0].book_image , style='height:265px;width:345px')
+            br
+            label SSID: #{bookdata[0].SSID}
+            br
+            label enter your book price:
+            input(type='hidden' name='ssid' value=bookdata[0].SSID)
+            input(type='text', name='price')
+            br
+            br
+            label description:
+            textarea(name='description')
+            br
+            label fill your book's tag
+            input(type='text', name='tag')
+            p
+            input.btn.btn-primary(name='button', value='submit', type='submit')
+
+

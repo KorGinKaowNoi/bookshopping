@@ -1,0 +1,14 @@
+extends layout
+block content
+    form(method='POST', action='/users/edit', enctype='multipart/form-data')
+        .form-group
+            label your name:
+            input.form-control(name='name', value=userdata[0].user_name , type='text')
+        .form-group
+            label import money:
+            input.form-control(name='money', value=userdata[0].user_balance , type='text')
+        .form-group
+            label image:
+            input(type='file', name='image')
+            br
+        input.btn.btn-primary(name='button', value='submit', type='submit')

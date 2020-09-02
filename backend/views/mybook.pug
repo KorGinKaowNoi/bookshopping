@@ -1,0 +1,9 @@
+extends layout
+block content
+    h3 YOUR BOOK IN STORE
+    each book in usersbook
+        div(style='text-align:center')
+            p(style='color:pink')= book.bookname
+            p=book.SSID
+            a(href='/shopcart/add/'+book.SSID )
+                img(src='http://localhost:5656/images/bookpicture/'+book.book_image, style='height:125px;width:125px')
