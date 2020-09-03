@@ -1,17 +1,22 @@
 extends layout
 block content
-    form(method='POST', action='/users/register')
-        .form-group
-            label Email:
-            input.form-control(name='email', type='email')
-        .form-group
-            label UserName:
-            input.form-control(name='username', type='text')
-        .form-group
-            label Password:
-            input.form-control(name='password', type='password')
-        .form-group
-            label ConfirmPassword:
-            input.form-control(name='ConPass', type='password')
-        br
-        input.btn.btn-primary(type='submit', value='submit')
+    nav.navbar.navbar-light(style='background-color: #e3f2fd;' )
+        .container
+            a.navbar-brand(href='/')
+                img(src='http://localhost:8080/images/assets/book.svg' width='60rem' height='60rem')
+                span Softbox book shop
+    .container.blocklog
+        .row.justify-content-center
+            .col-xl-12.col-md-12
+                h1 Sign Up
+                form(method='POST', action='/users/register')
+                    .form-group
+                        input.form-control(name='email', type='email' placeholder='E-mail')
+                    .form-group
+                        input.form-control(name='username', type='text' placeholder='Username')
+                    .form-group
+                        input.form-control(name='password', type='password' placeholder='Password')
+                    .form-group
+                        input.form-control(name='ConPass', type='password' placeholder='Confirm Password')
+                    .form-group
+                        input.btn.btn-primary(type='submit', value='Sign Up')
