@@ -13,3 +13,16 @@
     background-color: #dff0d8;
     border-color:#d6e9c6;
 }
+.form-group>input.form-control{
+    border: none;
+    outline:none;
+    border-bottom: 2px solid rgb(163, 228, 245);
+    margin:2rem;
+    width:30%;
+}
+.blocklog{
+    border:5px solid rgb(194, 231, 240);
+    border-radius: 2.5rem;
+    padding:2.5rem;
+    margin:2.5rem;
+}

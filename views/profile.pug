@@ -1,12 +1,23 @@
 extends layout
 block content
-    div(style='align:center')
-        img(src='http://localhost:5656/images/userpicture/'+userdata[0].user_image style='height:125px;width:125px')
-        br
-        label name:
-        p= userdata[0].user_name
-        br
-        label your tier:
-        p= userdata[0].userTier
-        label your current balance:
-        p= userdata[0].user_balance
+    nav.navbar.navbar-light(style='background-color: #e3f2fd;' )
+            .container
+                a.navbar-brand(href='/')
+                    img(src='http://localhost:8080/images/assets/book.svg' width='60rem' height='60rem')
+                    span Softbox book shop
+    .container
+        .row.justify-content-center
+            .col-xl-12.col-md-12
+                .card(style='width: 18rem;')
+                    img.card-img-top(src='http://localhost:8080/images/userpicture/'+userdata[0].user_image alt='your name')
+                    .card-body
+                        h5.card-title=userdata[0].user_name
+                    ul.list-group.list-group-flush
+                        li.list-group-item your tier 
+                            span=userdata[0].userTier
+                        li.list-group-item current balance 
+                            span=userdata[0].user_balance 
+                    .card-body
+                        a.card-link(href='/') book own 
+                        a.card-link(href='/') blog own 
+

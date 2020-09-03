@@ -3,7 +3,7 @@ block content
     each detail in bookdetail
         form(method='POST', action='/shopcart/'+detail.SSID )
             p= detail.SSID
-            img(src='http://localhost:5656/images/bookpicture/'+detail.book_image , style='height:150px;width:150px', onclick='buying('+detail.SSID+')')
+            img(src='http://localhost:8080/images/bookpicture/'+detail.book_image , style='height:150px;width:150px', onclick='buying('+detail.SSID+')')
             p owner is : #{detail.user_name}
             p price: #{detail.book_price} baht
             input(type='submit', value='BUY')

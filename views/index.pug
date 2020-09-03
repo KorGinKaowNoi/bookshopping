@@ -1,17 +1,40 @@
 extends layout
 block content
-    h1 hello world
-    if allow
-        a(href='/users/'+information+'/profile') PROFILE
-        br
-        a(href='/users/'+information+'/mybook') MY BOOK
-        br
-        a(href = '/users/logout') LOGOUT
-        br
-        a(href='/users/'+information+'/addBook') ADD
-        br
-        a(href='/users/'+information+'/edit') EDIT
+    if !allow
+        nav.navbar.navbar-expand-lg.navbar-light(style='background-color: #e3f2fd;')
+            .container-fluid
+                a.navbar-brand(href='/')
+                    img(src='http://localhost:8080/images/assets/book.svg' width='45rem' height='45rem')
+                    span  Softbox book store
+                ul.navbar-nav
+                    li.nav-item
+                        a.nav-link(href='/') Home
+                    li.nav-item
+                        a.nav-link(href='/') Store
+                    li.nav-item
+                        a.nav-link(href='/') Blog
+                    li.nav-item
+                        a.nav-link(href='/') Contract
+                    li.nav-item
+                        a.nav-link(href='/users/login') Sign in
     else
-        a(href='users/register') REGISTER
-        p
-        a(href='users/login') LOGIN
+        nav.navbar.navbar-expand-lg.navbar-light(style='background-color: #e3f2fd;')
+            .container-fluid
+                a.navbar-brand(href='/')
+                    img(src='http://localhost:8080/images/assets/book.svg' width='45rem' height='45rem')
+                    span  Softbox book store
+                ul.navbar-nav
+                    li.nav-item
+                        a.nav-link(href='/') Home
+                    li.nav-item
+                        a.nav-link(href='/') Store
+                    li.nav-item
+                        a.nav-link(href='/') Blog
+                    li.nav-item
+                        a.nav-link(href='/') Contract
+                    li.nav-item 
+                        a.nav-link(href='/users/' + information + '/profile') Profile
+                    li.nav-item
+                        a.nav-link(href='/users/logout') Sign out 
+                        
+

@@ -1,12 +1,20 @@
 extends layout
 block content
-    h1 Login
-    form(method='POST', action='/users/login')
-        .form-group
-            label username:
-            input.form-control(name='username', type='text')
-        .form-group
-            label password:
-            input.form-control(name='password', type='password')
-        br
-        input.btn.btn-primary(type='submit', value='login')
+    nav.navbar.navbar-light(style='background-color: #e3f2fd;' )
+        .container
+            a.navbar-brand(href='/')
+                img(src='http://localhost:8080/images/assets/book.svg' width='60rem' height='60rem')
+                span Softbox book shop
+    .container.blocklog
+        .row.justify-content-center
+            .col-xl-12.col-md-12
+                h1 Sign in 
+                form(method='POST', action='/users/login')
+                    .form-group
+                        input.form-control(name='username', type='text' placeholder='username')
+                    .form-group
+                        input.form-control(name='password', type='password' placeholder='password')
+                    .form-group
+                        input.btn.btn-primary(type='submit', value='sign in')
+                p don't have any account 
+                    a(href='/users/register') create some
