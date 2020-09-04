@@ -10,7 +10,7 @@ exports.edit = (req,res)=>{
         const query = 'update usersdetails set user_name=?,user_balance=?,user_image=?' +
             'where user_id=?';
         if(imageprofile.mimetype==='image/jpeg'||imageprofile.mimetype==='image/png'){
-            imageprofile.mv('/bookshoppingproject/public/images/userpicture/'+imageprofile.name,(err)=>{
+            imageprofile.mv('public/images/userpicture/'+imageprofile.name,(err)=>{
                 if(err) throw err;
                 db.query(query,[name,balance,imageprofile.name,req.session.thisuser],(err)=>{
                     if(err) throw err;
