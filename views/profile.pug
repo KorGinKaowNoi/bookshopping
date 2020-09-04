@@ -16,7 +16,9 @@ block content
                         li.list-group-item your tier 
                             span=userdata[0].userTier
                         li.list-group-item current balance 
-                            span=userdata[0].user_balance 
+                            span=userdata[0].user_balance
+                        li.list-group-item
+                            a.card-link(href='/users/' +userdata[0].user_id + '/edit') edit your profile
                     .card-body
                         a.card-link(href='/') book own 
                         a.card-link(href='/') blog own 

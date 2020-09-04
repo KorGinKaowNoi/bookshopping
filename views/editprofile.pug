@@ -1,14 +1,21 @@
 extends layout
 block content
-    form(method='POST', action='/users/edit', enctype='multipart/form-data')
-        .form-group
-            label your name:
-            input.form-control(name='name', value=userdata[0].user_name , type='text')
-        .form-group
-            label import money:
-            input.form-control(name='money', value=userdata[0].user_balance , type='text')
-        .form-group
-            label image:
-            input(type='file', name='image')
-            br
-        input.btn.btn-primary(name='button', value='submit', type='submit')
+    .container.blocklog
+        .row.d-flex.justify-content-center
+            col-xl-12.col-md-12
+            form(method='POST', action='/users/edit', enctype='multipart/form-data')
+                .form-group.row
+                    label.col-xl-2.col-md-2.edit your name:
+                    .col-xl-10.col-md-10
+                        input.form-control.edit(name='name', value=userdata[0].user_name , type='text')
+                .form-group.row
+                    label.col-xl-2.col-md-2.edit money:
+                    .col-xl-10.col-md-10
+                        input.form-control.edit(name='money', value=userdata[0].user_balance , type='text')
+                .form-file
+                    input#customerfile(type='file', name='image')
+                    label.form-file-label(for='customerfile')
+                        span.form-file-text choose your images
+                        span.form-file-button Browse
+                .form-group
+                    input.btn.btn-primary(name='button', value='confirm', type='submit')
