@@ -1,0 +1,30 @@
+extends layout
+block content
+    nav.navbar.navbar-expand.navbar-light(style='background-color: #e3f2fd;')
+        .container-fluid
+            a.navbar-brand(href='/')
+                img(src='http://localhost:8080/images/assets/book.svg' width='45rem' height='45rem')
+                span  Softbox book store
+            ul.navbar-nav
+                li.nav-item
+                    a.nav-link(href='/') Home
+                li.nav-item
+                    a.nav-link(href='/') Store
+                li.nav-item
+                    a.nav-link(href='/') Blog
+                li.nav-item
+                    a.nav-link(href='/') Contract
+                li.nav-item 
+                    a.nav-link(href='/users/' + information + '/profile') Profile
+                li.nav-item
+                    a.nav-link(href='/users/logout') Sign out
+    .container
+        .row.justify-content-center
+            .col-xl-6.col-md-6
+                h1 UserPage 
+                a(href='/admin/memberList')
+                    button.btn.btn-primary list 
+            .col-xl-6.col-md-6
+                h1 AddBook 
+                a(href='/users/add')
+                    button.btn.btn-primary add book
