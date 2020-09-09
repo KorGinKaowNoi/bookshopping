@@ -9,12 +9,12 @@ block content
         .row.justify-content-center
             .col-xl-12.col-md-12
                 h1 Sign in 
-                form(method='POST', action='/users/login')
+                form(method='POST' action='/users/login')
                     .form-group
-                        input.form-control(name='username', type='text' placeholder='username')
+                        input.form-control(name='username' type='text' placeholder='username')
                     .form-group
-                        input.form-control(name='password', type='password' placeholder='password')
+                        input.form-control(name='password' type='password' placeholder='password')
                     .form-group
-                        input.btn.btn-primary(type='submit', value='sign in')
+                        input.btn.btn-primary(type='submit' value='sign in')
                 p don't have any account 
                     a(href='/users/register') create some

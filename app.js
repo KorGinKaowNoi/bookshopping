@@ -8,6 +8,7 @@ const fileupload =require('express-fileupload');
 const session = require('express-session');
 const flash = require('connect-flash');
 const shopcart = require('./routes/shopcart');
+const admin = require('./routes/admin');
 //set to views
 app.set('views',path.join(__dirname,'views'));
 app.set('view engine','pug');
@@ -42,6 +43,7 @@ app.use((req,res,next)=>{
 });
 app.use('/users',users);
 app.use('/shopcart',shopcart);
+app.use('/admin',admin);
 //listen to
 app.listen(8080,()=>{
     console.log('listen to 8080...');
@@ -60,3 +62,7 @@ app.get('/',(req,res)=>{
         }
     });
 });
+
+app.get('/admin',(req,res)=>{
+    res.render('admin');
+})

@@ -1,0 +1,34 @@
+extends layout
+block content
+    nav.navbar.navbar-light(style='background-color: #e3f2fd;' )
+        .container
+            a.navbar-brand(href='/')
+                img(src='http://localhost:8080/images/assets/book.svg' width='60rem' height='60rem')
+                span Softbox book shop
+    .container
+        .row.justify-content-center
+            .col-xl-12.col-md-12
+                table
+                    thead
+                        tr
+                            td id
+                            td profile
+                            td name
+                            td paid
+                            td balance
+                            td tier
+                    tbody
+                        each i in member
+                            tr
+                                th=i.user_id
+                                td 
+                                    img(src='http://localhost:8080/images/userpicture/'+i.user_image width="80rem" height="80rem")  
+                                td=i.user_name
+                                td=i.user_payment
+                                td=i.user_balance
+                                td=i.userTier
+                                td 
+                                    a(herf='#') edit
+                                td
+                                    a(herf='#') delete
+                    
