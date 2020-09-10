@@ -1,0 +1,25 @@
+extends layout
+block content
+    .container.blocklog
+        .row.d-flex.justify-content-center
+            col-xl-12.col-md-12
+            form(method='POST', action='/admin/edited', enctype='multipart/form-data')
+                .form-group.row
+                    lable.col-xl-2.col-md-2.edit user id:
+                    .col-xl-10.col-md-10
+                        span=userdata[0].user_id
+                        input.form-control.edit(name='userid' value=userdata[0].user_id ,type='hidden')
+                .form-group.row
+                    label.col-xl-2.col-md-2.edit username:
+                    .col-xl-10.col-md-10
+                        input.form-control.edit(name='name', value=userdata[0].user_name , type='text')
+                .form-group.row
+                    label.col-xl-2.col-md-2.edit money:
+                    .col-xl-10.col-md-10
+                        input.form-control.edit(name='money', value=userdata[0].user_balance , type='text')
+                .form-group.row
+                    label.col-xl-2.col-md-2.edit tier:
+                    .col-xl-10.col-md-10
+                        input.form-control.edit(name='tier', value=userdata[0].userTier , type='text')
+                .form-group
+                    input.btn.btn-primary(name='button', value='confirm', type='submit')
