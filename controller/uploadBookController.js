@@ -5,7 +5,7 @@ exports.uploadBook = (req,res)=>{
     const userid = req.session.thisuser;
     const image = req.files.image;
     if(image.mimetype==='image/jpeg'||image.mimetype==='image/png'){
-        image.mv('/bookshoppingproject/public/images/bookpicture/'+image.name,(err)=>{
+        image.mv('public/images/bookpicture/'+image.name,(err)=>{
             if(err) throw err;
             let query = 'insert into bookdetails (SSID,bookname,book_image,user_id,onMarket) values?'
             const values =[[ISBN,bookname,image.name,userid,'no']]
