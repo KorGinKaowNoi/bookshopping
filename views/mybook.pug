@@ -1,9 +1,16 @@
 extends layout
 block content
-    h3 YOUR BOOK IN STORE
-    each book in usersbook
-        div(style='text-align:center')
-            p(style='color:pink')= book.bookname
-            p=book.SSID
-            a(href='/shopcart/add/'+book.SSID )
-                img(src='http://localhost:5656/images/bookpicture/'+book.book_image, style='height:125px;width:125px')
+    nav.navbar.navbar-light(style='background-color: #e3f2fd;' )
+        .container
+            a.navbar-brand(href='/')
+                img(src='http://localhost:8080/images/assets/book.svg' width='60rem' height='60rem')
+                span YOUR BOOK IN STORE
+    .container
+        .row
+            .col-xl-12.col-md-12
+                each book in usersbook
+                    div(style='text-align:center')
+                        p(style='color:pink')= book.bookname
+                        p=book.SSID
+                        a(href='/shopcart/add/'+book.SSID )
+                            img(src='http://localhost:8080/images/bookpicture/'+book.book_image, style='height:125px;width:125px')

@@ -13,13 +13,13 @@ block content
                     .card-body
                         h5.card-title=userdata[0].user_name
                     ul.list-group.list-group-flush
-                        li.list-group-item your tier 
+                        li.list-group-item your tier
                             span=userdata[0].userTier
-                        li.list-group-item current balance 
+                        li.list-group-item current balance
                             span=userdata[0].user_balance
                         li.list-group-item
                             a.card-link(href='/users/' +userdata[0].user_id + '/edit') edit your profile
                     .card-body
-                        a.card-link(href='/') book own 
-                        a.card-link(href='/users/' +userdata[0].user_id + '/addBook') add book 
+                        a.card-link(href='/users/'+userdata[0].user_id +'/mybook') book own
+                        a.card-link(href='/users/' +userdata[0].user_id + '/addBook') add book
 

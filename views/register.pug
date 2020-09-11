@@ -5,24 +5,18 @@ block content
             a.navbar-brand(href='/')
                 img(src='http://localhost:8080/images/assets/book.svg' width='60rem' height='60rem')
                 span Softbox book shop
-    .container.blocklog
+    .container
         .row.justify-content-center
-            .col-xl-12.col-md-12
+            .col-xl-5.col-md-5.blocklog.text-center
                 h1 Sign Up
                 form(method='POST' action='/users/register' entype='multipart/form-data')
                     .form-group
-                        input.form-control(name='email' type='email' placeholder='E-mail')
+                        input.form-control.mx-auto(name='email' type='email' placeholder='E-mail')
                     .form-group
-                        input.form-control(name='username' type='text' placeholder='Username')
+                        input.form-control.mx-auto(name='username' type='text' placeholder='Username')
                     .form-group
-                        input.form-control(name='password' type='password' placeholder='Password')
+                        input.form-control.mx-auto(name='password' type='password' placeholder='Password')
                     .form-group
-                        input.form-control(name='conPass' type='password' placeholder='Confirm Password')
-                    //.form-file
-                        input#customerfile(type='file' name='image')
-                        label.form-file-label(for='customerfile')
-                            span.form-file-text choose your images
-                            span.form-file-button Browse
-                    // figure out how to find the right way to add picture at beginning
+                        input.form-control.mx-auto(name='conPass' type='password' placeholder='Confirm Password')
                     .form-group
                         input.btn.btn-primary(type='submit' value='Sign Up')

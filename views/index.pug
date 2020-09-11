@@ -17,6 +17,23 @@ block content
                         a.nav-link(href='/') Contract
                     li.nav-item
                         a.nav-link(href='/users/login') Sign in
+        .container
+            .row.justify-content-center.my-4
+                .col-xl-5.col-md-5
+                    h1 Consider to be our reader
+                    p.mx-4 lorem lorem
+                    a(href='/users/register')
+                        button.btn.btn-primary sign up
+                .col-xl-5.col-md-5
+                    img(src="http://localhost:8080/images/assets/book.svg" width='300rem' height='auto')
+            .row.justify-content-center.my-4
+                .col-xl-5.col-md-5
+                    img(src="http://localhost:8080/images/assets/book (1).svg" width='300rem' height='auto')
+                .col-xl-5.col-md-5
+                    h1 already had an account
+                    p.mx-4 lorem lorem
+                    a(href='/users/login')
+                        button.btn.btn-primary sign in
     else
         nav.navbar.navbar-expand.navbar-light(style='background-color: #e3f2fd;')
             .container-fluid
@@ -38,18 +55,19 @@ block content
                         a.nav-link(href='/users/' + information + '/profile') Profile
                     li.nav-item
                         a.nav-link(href='/users/logout') Sign out
-    .container
-        .row.justify-content-center
-            .col-xl-6.col-md-6
-                h1 Online Book Store
-                button.btn.btn-primary get started
-            .col-xl-6.col-md-6
-                h1 Somepic
-        .row.justify-content-center
-            .col-xl-6.col-md-6
-                h1 somepic
-            .col-xl-6.col-md-6
-                h1 sometext
-                a(href='/users/register')
-                    button.btn.btn-primary be our reader
-่่
+        .container
+            .row.justify-content-center.my-4
+                .col-xl-5.col-md-5
+                    h1 check you book on your own
+                    p.mx-4 lorem lorem
+                    a(href='/users/' + information + '/profile')
+                        button.btn.btn-primary profile
+                .col-xl-5.col-md-5
+                    img(src='http://localhost:8080/images/assets/student.svg' width='300rem' height='auto')
+            .row.justify-content-center.my-4
+                .col-xl-5.col-md-5
+                    img(src='http://localhost:8080/images/assets/search.svg' width='300rem' height='auto')
+                .col-xl-5.col-md-5
+                    h1 consider to buy some book
+                    p.mx-4 lorem lorem
+                    button.btn.btn-primary go to the store
