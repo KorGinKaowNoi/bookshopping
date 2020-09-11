@@ -5,6 +5,7 @@ const loginController = require('../controller/loginController');
 const uploadBookController = require('../controller/uploadBookController');
 const editprofile = require('../controller/editProfileController');
 const profile = require('../controller/profileController');
+const access = require('../controller/accessController');
 router.get('/register',(req,res)=>{
     res.render('register');
 });
@@ -15,12 +16,12 @@ router.get('/login',(req,res)=>{
 });
 router.post('/login',loginController.login)
 router.get('/logout',loginController.logout)
-router.get('/:id/addBook',(req,res)=>{
+router.get('/:id/addBook',access.checkAuth,(req,res)=>{
     res.render('addBook');
 });
-router.route('/add').post(uploadBookController.uploadBook);
-router.get('/:id/edit',editprofile.getEdit);
-router.post('/edit',editprofile.edit);
-router.get('/:id/profile',profile.getProfile);
-router.get('/:id/mybook',uploadBookController.getBook)
+router.post('/add',access.checkAuth,uploadBookController.uploadBook);
+router.get('/:id/edit',access.checkAuth,editprofile.getEdit);
+router.post('/edit',access.checkAuth,editprofile.edit);
+router.get('/:id/profile',access.checkAuth,profile.getProfile);
+router.get('/:id/mybook',access.checkAuth,uploadBookController.getBook)
 module.exports = router;
