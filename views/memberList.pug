@@ -8,7 +8,7 @@ block content
     .container
         .row.justify-content-center
             .col-xl-12.col-md-12
-                table
+                table.table.table-light.table-striped
                     thead
                         tr
                             td id
@@ -17,18 +17,20 @@ block content
                             td paid
                             td balance
                             td tier
+                            td
+                            td
                     tbody
                         each i in member
                             tr
                                 th=i.user_id
-                                td 
-                                    img(src='http://localhost:8080/images/userpicture/'+i.user_image width="80rem" height="80rem")  
+                                td
+                                    img.img-fluid(src='http://localhost:8080/images/userpicture/'+i.user_image width="200rem" height="200rem")
                                 td=i.user_name
                                 td=i.user_payment
                                 td=i.user_balance
                                 td=i.userTier
-                                td 
-                                    a(herf='#') edit
                                 td
-                                    a(herf='#') delete
+                                    a(href='/admin/'+i.user_id+'/edit') edit
+                                td
+                                    a(href='/admin/'+i.user_id+'/delete') delete
                     
