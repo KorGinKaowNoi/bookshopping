@@ -79,7 +79,7 @@ exports.checkAndBuy = (req,res)=>{
                     })
                 })
                 query = 'update orderdetails set payment_date = ? where user_id=?'
-                const time = date.getDate()+'/'+date.getMonth()+1+'/'+date.getFullYear();
+                const time = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}(${date.getHours()}:${date.getMinutes()}:${date.getSeconds()})`
                 db.query(query,[time,user],(err)=>{
                     if(err) throw err;
                 });
