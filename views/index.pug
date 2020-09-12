@@ -10,11 +10,11 @@ block content
                     li.nav-item
                         a.nav-link(href='/') Home
                     li.nav-item
-                        a.nav-link(href='/') Store
+                        a.nav-link(href='/users/login') Store
                     li.nav-item
                         a.nav-link(href='/') Blog
                     li.nav-item
-                        a.nav-link(href='/') Contract
+                        a.nav-link(href='#lower') Contract
                     li.nav-item
                         a.nav-link(href='/users/login') Sign in
         .container
@@ -46,11 +46,11 @@ block content
                     li.nav-item
                         a.nav-link(href='/') Home
                     li.nav-item
-                        a.nav-link(href='/') Store
+                        a.nav-link(href='/shopcart') Store
                     li.nav-item
                         a.nav-link(href='/') Blog
                     li.nav-item
-                        a.nav-link(href='/') Contract
+                        a.nav-link(href='#lower') Contract
                     li.nav-item 
                         a.nav-link(href='/users/' + information + '/profile') Profile
                     li.nav-item
@@ -70,4 +70,5 @@ block content
                 .col-xl-5.col-md-5
                     h1 consider to buy some book
                     p.mx-4 let go spend some money to buy some book 
-                    button.btn.btn-primary go to the store
+                    a(href='/shopcart')
+                        button.btn.btn-primary go to the store

@@ -1,0 +1,31 @@
+extends layout
+block content
+    nav.navbar.navbar-light(style='background-color: #e3f2fd;' )
+        .container
+            a.navbar-brand(href='/')
+                img(src='http://localhost:8080/images/assets/book.svg' width='60rem' height='60rem')
+                span Softbox book shop
+    .container.my-4
+        .row.justify-content-center
+            .col-xl-12.col-md-12
+                h4 member in our shop now
+                table.table.table-light.table-striped
+                    thead
+                        tr
+                            td SSID 
+                            td book cover
+                            td book name
+                            td book description
+                            td owner's name
+                            td price
+                    tbody
+                        each i in book 
+                            tr
+                                th=i.SSID
+                                td
+                                    img.img-thumbnail.img-fluid(src='http://localhost:8080/images/bookpicture/'+i.book_image width="200rem" height="200rem")
+                                td=i.bookname
+                                td=i.book_description
+                                td=i.user_name
+                                td=i.book_price
+                    

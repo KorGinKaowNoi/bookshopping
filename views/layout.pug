@@ -3,12 +3,13 @@ html
     head
         link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css')
         link(rel='stylesheet' href='/css/style.css')
+        link(rel="shortcut icon", href="http://localhost:8080/images/assets/book.svg", type="image/x-icon")
         title SoftBox Bookshop
     body
         != messages('message',locals)
         
         block content
-        footer
+        footer#lower
             .container-fluid(style="background-color:#e3f2fd;")
                 .row.d-flex.justify-content-center
                     .col-xl-5.col-md-5.my-4.mx-2
