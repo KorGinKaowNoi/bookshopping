@@ -5,12 +5,28 @@ block content
             a.navbar-brand(href='/')
                 img(src='http://localhost:8080/images/assets/book.svg' width='60rem' height='60rem')
                 span YOUR BOOK IN STORE
-    .container
-        .row
+    .container.my-4
+        .row.justify-content-center
             .col-xl-12.col-md-12
-                each book in usersbook
-                    div(style='text-align:center')
-                        p(style='color:pink')= book.bookname
-                        p=book.SSID
-                        a(href='/shopcart/add/'+book.SSID )
-                            img(src='http://localhost:8080/images/bookpicture/'+book.book_image, style='height:125px;width:125px')
+                if usersbook.length === 0
+                    h1.text-center you don't own any book lately
+                    h2.text-center may be go to 
+                       a(href='/') add some
+                else
+                    h3 your book on own
+                    table.table.align-middle.showBook
+                        thead
+                            tr
+                                th book id
+                                th book name 
+                                th book cover
+                                td
+                        tbody
+                        each book in usersbook
+                            tr
+                                td.showBook=book.SSID
+                                td.showBook=book.bookname
+                                td.showBook    
+                                    img.img-thumbnail(src='http://localhost:8080/images/bookpicture/'+book.book_image, style='height:125px;width:125px')
+                                td.showBook
+                                    a(href='/shopcart/add/'+book.SSID ) add to store

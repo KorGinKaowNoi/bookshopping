@@ -6,20 +6,27 @@ block content
                     img(src='http://localhost:8080/images/assets/book.svg' width='60rem' height='60rem')
                     span Softbox book shop
     .container
-        .row.justify-content-center
-            .col-xl-12.col-md-12
-                .card(style='width: 18rem;')
-                    img.card-img-top(src='http://localhost:8080/images/userpicture/'+userdata[0].user_image alt='your name')
-                    .card-body
-                        h5.card-title=userdata[0].user_name
-                    ul.list-group.list-group-flush
-                        li.list-group-item your tier
-                            span=userdata[0].userTier
-                        li.list-group-item current balance
-                            span=userdata[0].user_balance
-                        li.list-group-item
-                            a.card-link(href='/users/' +userdata[0].user_id + '/edit') edit your profile
-                    .card-body
-                        a.card-link(href='/users/'+userdata[0].user_id +'/mybook') book own
-                        a.card-link(href='/users/' +userdata[0].user_id + '/addBook') add book
+        .row.justify-content-center.blocklog
+            .col-xl-6.col-md-6
+                img.profile(src='http://localhost:8080/images/userpicture/'+userdata[0].user_image alt='your name' width='auto' height='20rem') 
+                p.mx-4 
+                    a.link-success(href='/users/' + userdata[0].user_id + '/edit') edit you profile 
+            .col-xl-6.col-md-6
+                .row.justify-content-center
+                    .col-xl.col-md
+                        p.profile name: 
+                            span.profile=userdata[0].user_name
+                        p.profile Tier: 
+                            span.profile=userdata[0].userTier
+                        p.profile Balance: 
+                            span.profile=userdata[0].user_balance
+                .row.justify-content-center
+                    .col-xl-6.col-md-6
+                        a(href='/users/' + userdata[0].user_id + '/mybook')
+                            button.btn.btn-primary book own
+                    .col-xl-6.col-md-6
+                        a(href='/users/' + userdata[0].user_id + '/addBook')
+                            button.btn.btn-primary add book
 
+
+                

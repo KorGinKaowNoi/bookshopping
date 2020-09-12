@@ -1,18 +1,15 @@
 extends layout
 block content
-    p Addbook
     .container-fluid
         .row.justify-content-center
-            .col-xl-12
+            .col-xl-6.col-md-6.blocklog.text-center
+                h1.text-center add book to your own
                 form(method='POST' action='/users/add' enctype='multipart/form-data')
                     .form-group
-                        label ISBN:
-                        input.form-control(name='isbn' type='text')
+                        input.my-4(type='file' name='image' placeholder='select your cover')
                     .form-group
-                        label bookname:
-                        input.form-control(name='bookname' type='text')
+                        input.form-control.mx-auto(name='isbn' type='text' placeholder='ISBN')
                     .form-group
-                        label image:
-                        input(type='file' name='image')
+                        input.form-control.mx-auto(name='bookname' type='text' placeholder='Bookname')
                     .form-group 
                         input.btn.btn-primary(name='button' value='submit' type='submit')

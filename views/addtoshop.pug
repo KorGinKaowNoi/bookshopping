@@ -1,25 +1,17 @@
 extends layout
 block content
-    form(method='POST', action='/shopcart/add', enctype='multipart/form-data')
-        div(style='text-align:center')
-            h3 prepare to export to shopping mall
-            br
-            h3 please fill in your book details
-            img(src='http://localhost:8080/images/bookpicture/'+bookdata[0].book_image , style='height:265px;width:345px')
-            br
-            label SSID: #{bookdata[0].SSID}
-            br
-            label enter your book price:
-            input(type='hidden' name='ssid' value=bookdata[0].SSID)
-            input(type='text', name='price')
-            br
-            br
-            label description:
-            textarea(name='description')
-            br
-            label fill your book's tag
-            input(type='text', name='tag')
-            p
-            input.btn.btn-primary(name='button', value='submit', type='submit')
+    .container
+        .row.justify-content-center
+            .col-xl-6.col-md-6.blocklog.text-center
+                h3 prepare to export to shopping mall
+                h3 please fill in your book details
+                img.img-thumbnail(src='http://localhost:8080/images/bookpicture/'+bookdata[0].book_image , style='height:265px;width:345px')
+                p SSID: #{bookdata[0].SSID}
+                form(method='POST', action='/shopcart/add', enctype='multipart/form-data')
+                    input.form-control.edit.mx-auto(type='hidden' name='ssid' value=bookdata[0].SSID)
+                    input.form-control.edit.mx-auto(type='text', name='price' placeholder='price')
+                    input.form-control.edit.mx-auto(type='text', name='tag' placeholder='fill your tag')
+                    textarea.form-control.mx-auto(name='description' placeholder='fill your description' rows='4' cols='25')
+                    input.btn.btn-primary(name='button', value='submit', type='submit')
 
 

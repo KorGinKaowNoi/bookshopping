@@ -1,21 +1,12 @@
 extends layout
 block content
-    .container.blocklog
+    .container
         .row.d-flex.justify-content-center
-            col-xl-12.col-md-12
-            form(method='POST', action='/users/edit', enctype='multipart/form-data')
-                .form-group.row
-                    label.col-xl-2.col-md-2.edit your name:
-                    .col-xl-10.col-md-10
-                        input.form-control.edit(name='name', value=userdata[0].user_name , type='text')
-                .form-group.row
-                    label.col-xl-2.col-md-2.edit money:
-                    .col-xl-10.col-md-10
-                        input.form-control.edit(name='money', value=userdata[0].user_balance , type='text')
-                .form-file
-                    input#customerfile(type='file', name='image')
-                    label.form-file-label(for='customerfile')
-                        span.form-file-text choose your images
-                        span.form-file-button Browse
-                .form-group
-                    input.btn.btn-primary(name='button', value='confirm', type='submit')
+            .col-xl-6.col-md-6.blocklog.text-center
+                h1.text-center edit
+                img.img-thumbnail.text-center(src='http://localhost:8080/images/userpicture/' + userdata[0].user_image width='320rem' height='320rem')
+                form(method='POST' action='/users/edit' enctype='multipart/form-data')
+                        input.my-4.mx-auto(type='file' name='image')    
+                        input.form-control.edit.mx-auto(name='name', value=userdata[0].user_name , type='text')
+                        input.form-control.edit.mx-auto(name='money', value=userdata[0].user_balance , type='text')
+                        input.btn.btn-primary(name='button' value='confirm' type='submit')
