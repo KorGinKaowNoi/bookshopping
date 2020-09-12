@@ -31,7 +31,7 @@ exports.cartToMarket = (req,res)=>{
 
 }
 exports.showMarket = (req,res)=>{
-    const query = 'select SSID,user_name,book_image,book_price,bookname from shopcart ' +
+    const query = 'select SSID,user_name,book_image,book_price,bookname,book_description from shopcart ' +
         'inner join usersdetails d using(user_id)' +
         'inner join bookdetails b using(SSID)'
     db.query(query,(err,result)=>{

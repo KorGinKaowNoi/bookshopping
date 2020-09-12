@@ -46,3 +46,12 @@ exports.EditUser = (req,res) =>{
         res.redirect('/admin/memberList');
     })
 }
+exports.book = (req,res) =>{
+    const query = 'select SSID,user_name,book_image,book_price,bookname,book_description from shopcart ' +
+        'inner join usersdetails d using(user_id)' +
+        'inner join bookdetails b using(SSID)';
+
+    db.query(query,(err,result)=>{
+        res.render('booklist',{book:result});
+    });
+}
