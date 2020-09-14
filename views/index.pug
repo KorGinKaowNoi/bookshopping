@@ -30,10 +30,11 @@ block content
                 .col-xl-5.col-md-5
                     img(src="http://localhost:8080/images/assets/book (1).svg" width='300rem' height='auto')
                 .col-xl-5.col-md-5
-                    h1 already had an account?
-                    p.mx-4 then login to our online bookshop!!! 
-                    a(href='/users/login')
-                        button.btn.btn-primary sign in
+                    h1 Looking for a book?
+                    p.mx-4 let search shell we?
+                    form.mx-4(method='POST', action='/search')
+                        input.edit(type='text', name='search' placeholder='search')
+                        input.search.btn.btn-primary(name='box', type='submit' value='GO')
     else
         nav.navbar.navbar-expand.navbar-light(style='background-color: #e3f2fd;')
             .container-fluid

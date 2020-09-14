@@ -1,16 +1,22 @@
 extends layout
 block content
-    if(bookdetail!==undefined)
-        each detail in bookdetail
-            form(method='POST', action='/shopcart/'+detail.SSID )
-                p= detail.SSID
-                img(src='http://localhost:8080/images/bookpicture/'+detail.book_image , style='height:150px;width:150px', onclick='buying('+detail.SSID+')')
-                p book's name: #{detail.bookname}
-                p owner is : #{detail.user_name}
-                input(type='hidden', value=detail.user_id , name='seller')
-                p price: #{detail.book_price} baht
-                if(detail.user_id!==owner)
-                    input(type='submit', name='buy' , value='BUY')
-                else
-                    input(type='button', value='YOUR BOOK')
-                hr
+    nav.navbar.navbar-light(style='background-color: #e3f2fd;' )
+        .container
+            a.navbar-brand(href='/')
+                img(src='http://localhost:8080/images/assets/book.svg' width='60rem' height='60rem')
+                span Softbox book shop
+    .container.my-4
+        .row
+            each detail in bookdetail
+                .col-md-3.col-xl-3.my-4
+                    form.card(method='POST', action='/shopcart/'+detail.SSID style='width:18rem')
+                        img.card-img-top(src='http://localhost:8080/images/bookpicture/'+detail.book_image   onclick='buying('+detail.SSID+')')
+                        .card-body
+                            h3.card-title=detail.bookname 
+                            h5.card-title price: #{detail.book_price} ฿
+                            p.card-text=detail.book_description
+                            p.card-text owner: #{detail.user_name}
+                            if(detail.user_id!==owner)
+                                input.btn.btn-primary(type='submit', value='BUY')
+                            else
+                                input.btn.btn-primary(type='submit', value='It your book')
