@@ -1,10 +1,10 @@
 const express = require('express');
 const router  = express.Router();
+const access = require('../controller/accessController')
 const addshop = require('../controller/addShopController');
-const buybook = require('../controller/buyBookController');
-const buysell = require('../controller/buyAndSellController');
-router.get('/',addshop.showMarket);
-router.get('/add/:id',addshop.addtocart);
+const buy = require('../controller/buyAndSellController');
+router.get('/',access.checkAuth,addshop.showMarket);
+router.get('/add/:id',access.checkAuth,addshop.addtocart);
 router.post('/add/',addshop.cartToMarket);
-router.post('/:id',buysell.completeBuy);
+router.post('/:id',access.checkAuth,buy.completeBuy);
 module.exports = router;
