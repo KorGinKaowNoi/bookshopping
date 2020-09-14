@@ -1,11 +1,23 @@
 extends layout
 block content
-    if(bookdetail.length!==0)
-        each book in bookdetail
-            label SSID: #{book.SSID}
-            img(src='http://localhost:8080/images/bookpicture/' + book.book_image , style='height:150px;width:150px', onclick='buying(' + book.SSID + ')')
-            label description
-            p= book.book_description
-            p= book.tag
-    else
-        h2 no such books you looking for
+    nav.navbar.navbar-light(style='background-color: #e3f2fd;' )
+        .container
+            a.navbar-brand(href='/')
+                img(src='http://localhost:8080/images/assets/book.svg' width='60rem' height='60rem')
+                span.mx-2 Softbox book shop
+    .container.my-4
+        .row
+            if(bookdetail.length!==0)
+                each detail in bookdetail
+                    .col-md-3.col-xl-3.my-4
+                    form.card(method='POST', action='/shopcart/'+detail.SSID style='width:18rem')
+                        img.card-img-top(src='http://localhost:8080/images/bookpicture/'+detail.book_image   onclick='buying('+detail.SSID+')')
+                        .card-body
+                            h3.card-title=detail.bookname 
+                            h5.card-title price: #{detail.book_price} ฿
+                            p.card-text=detail.book_description
+                            p.card-text owner: #{detail.user_name}
+                            input.btn.btn-primary(type='submit', value='BUY')
+            else
+                .col-md-12.col-xl-12
+                    h2.text-center no such books you looking for
