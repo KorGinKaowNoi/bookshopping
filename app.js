@@ -51,17 +51,22 @@ app.listen(8080,()=>{
 });
 //get
 app.get('/',(req,res)=>{
-    let query = "select * from reader";
-    db.query(query,(err,result)=>{
-        if(err){
-            console.log(err);
-        }else{
-            res.render('index',{
-                information:req.session.thisuser,
-                allow:req.session.allow
-            });
-        }
-    });
+    if(req.session.allow){
+        let query = "select * from reader where user_id= ?";
+        db.query(query,[req.session.thisuser],(err,result)=>{
+            if(err){
+                console.log(err);
+            }else{
+                console.log(result)
+                res.render('index',{
+                    information:result[0],
+                    allow:req.session.allow
+                });
+            }
+        });
+    }else{
+        res.render('index')
+    }
 });
 
 app.get('/admin',(req,res)=>{
