@@ -6,6 +6,7 @@ const uploadBookController = require('../controller/uploadBookController');
 const editprofile = require('../controller/editProfileController');
 const profile = require('../controller/profileController');
 const access = require('../controller/accessController');
+const showhistory = require('../controller/userHistoryControl')
 router.get('/register',(req,res)=>{
     res.render('register');
 });
@@ -23,5 +24,6 @@ router.post('/add',access.checkAuth,uploadBookController.uploadBook);
 router.get('/:id/edit',access.checkAuth,editprofile.getEdit);
 router.post('/edit',access.checkAuth,editprofile.edit);
 router.get('/:id/profile',access.checkAuth,profile.getProfile);
-router.get('/:id/mybook',access.checkAuth,uploadBookController.getBook)
+router.get('/:id/mybook',access.checkAuth,uploadBookController.getBook);
+router.get('/:id/history',access.checkAuth,showhistory.showHistory)
 module.exports = router;
