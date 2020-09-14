@@ -1,0 +1,8 @@
+extends layout
+block content
+    p #{text}
+    if historyDetail!==undefined
+        each history in historyDetail
+            p= history.SSID
+            p=history.bookname
+            p=history.payment_date
