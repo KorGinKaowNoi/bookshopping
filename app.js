@@ -9,6 +9,7 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const shopcart = require('./routes/shopcart');
 const admin = require('./routes/admin');
+const search = require('./controller/searchControl');
 //set to views
 app.set('views',path.join(__dirname,'views'));
 app.set('view engine','pug');
@@ -66,3 +67,4 @@ app.get('/',(req,res)=>{
 app.get('/admin',(req,res)=>{
     res.render('admin');
 })
+app.post('/search',search.search)
