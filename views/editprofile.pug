@@ -4,7 +4,10 @@ block content
         .row.d-flex.justify-content-center
             .col-xl-6.col-md-6.blocklog.text-center
                 h1.text-center edit
-                img.img-thumbnail.text-center(src='http://localhost:8080/images/userpicture/' + userdata[0].user_image width='320rem' height='320rem')
+                if(userdata[0].user_image!==null)
+                    img.img-thumbnail.text-center(src='http://localhost:8080/images/userpicture/' + userdata[0].user_image width='320rem' height='320rem')
+                else
+                    img.img-thumbnail.text-center(src='http://localhost:8080/images/userpicture/defultPicture.png'  width='320rem' height='320rem')
                 form(method='POST' action='/users/edit' enctype='multipart/form-data')
                         input.my-4.mx-auto(type='file' name='image')    
                         input.form-control.edit.mx-auto(name='name', value=userdata[0].user_name , type='text')
