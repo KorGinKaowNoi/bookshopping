@@ -13,7 +13,8 @@ block content
                     form.card(method='POST', action='/shopcart/'+detail.SSID style='width:18rem')
                         img.card-img-top(src='http://localhost:8080/images/bookpicture/'+detail.book_image   onclick='buying('+detail.SSID+')')
                         .card-body
-                            h3.card-title=detail.bookname 
+                            h3.card-title=detail.bookname
+                            input(type='hidden', name='seller', value=detail.user_id)
                             h5.card-title price: #{detail.book_price} ฿
                             p.card-text=detail.book_description
                             p.card-text owner: #{detail.user_name}
