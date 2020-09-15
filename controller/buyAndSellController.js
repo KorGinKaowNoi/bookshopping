@@ -1,51 +1,39 @@
 let date = new Date();
 const email = require('../config/email');
 exports.completeBuy =  (req,res)=>{
-    let buyer;
-    let seller;
-    let book;
     let user = req.session.thisuser;
     const SSID = req.params.id;
     const sellerId = req.body.seller;
     const getBuyer =  (query)=>{
              db.query(query,[user],(err,result)=>{
             if(err) throw err;
-             storeBuyer(result[0])
+             return result[0]
         })
     }
 
     const getBook = (query)=>{
         db.query(query,[SSID],(err,result)=>{
             if(err) throw err;
-            storeBook(result[0])
+            return result[0]
             });
     }
-    const getSeller =  (query)=>{
+    const getSeller = (query)=>{
         db.query(query,[sellerId],(err,result)=>{
             if(err) throw err;
-            storeSeller(result[0])
+            return result[0]
         });
     };
     const querySeller='select * from usersdetails inner join reader using(user_id) where user_id=?'
     const queryBuyer='select * from usersdetails where user_id=?'
     const queryBook ='select * from shopcart where SSID =?'
-    getBuyer(queryBuyer);
-    const storeBuyer =(data)=>{
-        buyer = JSON.stringify(data);
-        getBook(queryBook);
+    const getData = async()=>{
+       const buyer = await getBuyer(queryBuyer);
+       const book = await getBook(queryBook);
+       const seller = await getSeller(querySeller);
+        buyandsell(buyer,book,seller);
     }
-    const storeBook = async (data)=>{
-        book = await JSON.stringify(data);
-        getSeller(querySeller);
-    }
-    const storeSeller = (data)=>{
-        seller = JSON.stringify(data);
-        buyandsell();
-    }
-    function buyandsell(){
-        buyer = JSON.parse(buyer);
-        seller = JSON.parse(seller);
-        book =JSON.parse(book)
+    getData();
+    function buyandsell(buyer,book,seller){
         if(buyer.user_balance<book.book_price){
             req.flash('danger','your current balance is not enough')
             res.redirect('/shopcart');
