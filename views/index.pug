@@ -53,7 +53,7 @@ block content
                     li.nav-item
                         a.nav-link(href='#lower') Contract
                     li.nav-item 
-                        a.nav-link(href='/users/' + information + '/profile') Profile
+                        a.nav-link(href='/users/' + information.user_id + '/profile') Profile
                     li.nav-item
                         a.nav-link(href='/users/logout') Sign out
         .container
@@ -61,7 +61,7 @@ block content
                 .col-xl-5.col-md-5
                     h1 check you book on your own
                     p.mx-4 your book is ready to read 
-                    a(href='/users/' + information + '/profile')
+                    a(href='/users/' + information.user_id + '/profile')
                         button.btn.btn-primary profile
                 .col-xl-5.col-md-5
                     img(src='http://localhost:8080/images/assets/student.svg' width='300rem' height='auto')
