@@ -5,6 +5,7 @@ block content
             a.navbar-brand(href='/')
                 img(src='http://localhost:8080/images/assets/book.svg' width='60rem' height='60rem')
                 span Softbox book shop
+            p.text-center welcome #{owner}
     .container.my-4
         .row
             each detail in bookdetail
@@ -19,4 +20,4 @@ block content
                             if(detail.user_id!==owner)
                                 input.btn.btn-primary(type='submit', value='BUY')
                             else
-                                input.btn.btn-primary(type='submit', value='It your book')
+                                input.btn.btn-primary(type='button', value='It your book')

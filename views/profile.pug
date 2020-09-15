@@ -21,12 +21,16 @@ block content
                         p.profile Balance: 
                             span.profile=userdata[0].user_balance
                 .row.justify-content-center
-                    .col-xl-6.col-md-6
+                    .col-xl-4.col-md-4
                         a(href='/users/' + userdata[0].user_id + '/mybook')
-                            button.btn.btn-primary book own
-                    .col-xl-6.col-md-6
+                            button.btn.btn-primary own
+                    .col-xl-4.col-md-4
                         a(href='/users/' + userdata[0].user_id + '/addBook')
-                            button.btn.btn-primary add book
+                            button.btn.btn-primary add
+                    .col-xl-4.col-md-4
+                        a(href='/users/' + userdata[0].user_id + '/history')
+                            button.btn.btn-primary history
+
 
 
                 
