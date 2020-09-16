@@ -9,10 +9,13 @@ A.pree project
     <li>to start this application run command *node app.js*</li>
 </ol>
 
+#### we don't have an database we'll update later
+
 if you have any issue please open issue on this repository
 
 we have 2 contributor in project
 - Sahachan Frontend
 - Thitisarn Backend
-and you can call us กามูๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆ
+- and you can call us กามูๆๆๆๆๆๆๆๆ
+
 &copy;Softbox
